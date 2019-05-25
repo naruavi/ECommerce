@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/tv_bottom_sheet_heading"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="SORT BY"
+        android:padding="8dp"
+        android:textSize="16sp" />
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/black" />
+
+    <android.support.v7.widget.AppCompatRadioButton
+        android:id="@+id/price_low_to_high"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="price -- Low to High"
+        android:backgroundTint="@android:color/white"
+        android:gravity="start|center_vertical"
+        android:textSize="16sp" />
+
+    <android.support.v7.widget.AppCompatRadioButton
+        android:id="@+id/price_high_to_low"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="price -- Low to High"
+        android:backgroundTint="@android:color/white"
+        android:gravity="start|center_vertical"
+        android:textSize="16sp" />
+
+
+</LinearLayout>
