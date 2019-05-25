@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">Ecommerce</string>
+    <string name="title_activity_main2">E-commerce</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Home</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+    <string name="search_hint">Search For Products</string>
+    <string name="menu_books">Books</string>
+    <string name="menu_electronics">Electronics</string>
+    <string name="menu_luggage">Luggage</string>
+    <string name="menu_beauty_and_care_products">Beauty And Care Products</string>
+    <string name="menu_fashion">Fashion</string>
+    <string name="menu_my_orders">My Orders</string>
+    <string name="menu_my_cart">My Cart</string>
+    <string name="menu_my_account">My Account</string>
+    <string name="menu_send">Send</string>
+    <string name="query_hint">Search For Products</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

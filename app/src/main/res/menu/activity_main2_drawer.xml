@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group
+        android:id="@+id/menu_category"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_books"
+            android:icon="@drawable/ic_baseline_library_books_24px"
+            android:title="@string/menu_books" />
+        <item
+            android:id="@+id/nav_electronics"
+            android:icon="@drawable/ic_baseline_mobile_screen_share_24px"
+            android:title="@string/menu_electronics" />
+        <item
+            android:id="@+id/nav_lug"
+            android:icon="@drawable/ic_storage"
+            android:title="@string/menu_luggage" />
+        <item
+            android:id="@+id/nav_tools"
+            android:icon="@drawable/ic_bathroom"
+            android:title="@string/menu_beauty_and_care_products" />
+        <item
+            android:id="@+id/nav_fashion"
+            android:icon="@drawable/ic_man"
+            android:title="@string/menu_fashion" />
+    </group>
+
+    <group
+        android:id="@+id/menu_user_actions"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_my_orders"
+            android:title="@string/menu_my_orders" />
+        <item
+            android:id="@+id/nav_my_cart"
+            android:title="@string/menu_my_cart" />
+        <item
+            android:id="@+id/nav_my_account"
+            android:title="@string/menu_my_account" />
+    </group>
+
+</menu>
