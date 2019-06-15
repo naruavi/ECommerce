@@ -12,6 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="8dp"
+        android:background="@drawable/side_nav_bar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -22,17 +23,29 @@
             android:layout_height="wrap_content" />
 
         <ImageView
+            android:onClick="goToCart"
+            android:padding="8dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="end"
             android:layout_margin="8dp"
-            android:src="@drawable/ic_baseline_shopping_cart_24px"/>
+            android:src="@drawable/ic_baseline_shopping_cart_24px" />
 
-        <android.support.v7.widget.SearchView
+        <ImageView
+            android:onClick="goToSearch"
+            android:id="@+id/searchItemSearch"
+            android:padding="8dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="end">
-        </android.support.v7.widget.SearchView>
+            android:layout_gravity="end"
+            android:layout_margin="8dp"
+            android:src="@drawable/ic_baseline_search_24px" />
+
+        <!--<android.support.v7.widget.SearchView-->
+            <!--android:id="@+id/searchItemSearch"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_gravity="end"/>-->
     </android.support.v7.widget.Toolbar>
 
     <GridLayout
@@ -67,11 +80,12 @@
 
     <FrameLayout
         android:id="@+id/productRecyclerViewHolder"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar2">
-    </FrameLayout>
+        app:layout_constraintTop_toBottomOf="@+id/ProductGrid" />
 
 </android.support.constraint.ConstraintLayout>

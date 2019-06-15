@@ -1,36 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v7.widget.CardView
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    xmlns:cardview="http://schemas.android.com/apk/res-auto"
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:cardview="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/cardview_id"
-    android:clickable="true"
-    android:focusable="true"
-    android:foreground="?android:attr/selectableItemBackground"
-    android:layout_weight="1"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="5dp"
+    android:layout_weight="1"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?android:attr/selectableItemBackground"
+    android:theme="@style/MaterialTheme"
     cardview:cardCornerRadius="4dp">
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@drawable/cardview_background"
         android:orientation="vertical">
 
         <TextView
             android:id="@+id/ProductCartName"
-            android:layout_width="wrap_content"
+            android:layout_width="250dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
+            android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
+            android:ellipsize="end"
+            android:maxLines="2"
             android:text="Product Name"
             android:textColor="#2d2d2d"
-            android:textSize="24sp"
-            cardview:layout_constraintStart_toStartOf="parent"
-            cardview:layout_constraintTop_toTopOf="parent" />
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
+        <TextView
+            android:id="@+id/productId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/merchantId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone" />
 
         <TextView
             android:id="@+id/merchantCartName"
@@ -44,15 +58,16 @@
             cardview:layout_constraintTop_toBottomOf="@+id/ProductCartName" />
 
         <ImageView
-            android:id="@+id/cart_image_id"
+            android:id="@+id/cartProductImage"
             android:layout_width="0dp"
-            android:layout_height="0dp"
+            android:layout_height="80dp"
             android:layout_gravity="end"
             android:layout_marginStart="110dp"
             android:layout_marginTop="32dp"
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="60dp"
-            android:scaleType="centerCrop"
+            android:background="@color/white"
+            android:scaleType="centerInside"
             android:src="@drawable/ic_man"
             cardview:layout_constraintBottom_toTopOf="@+id/ProductGrid"
             cardview:layout_constraintEnd_toEndOf="parent"
@@ -63,8 +78,8 @@
             android:id="@+id/price"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:text="449"
+            android:layout_marginTop="88dp"
+            android:text="Rs. 449"
             android:textColor="#2d2d2d"
             android:textSize="24sp"
             cardview:layout_constraintStart_toStartOf="@+id/merchantCartName"
@@ -72,26 +87,30 @@
 
 
         <LinearLayout
+            android:id="@+id/linearLayout2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
             android:orientation="horizontal"
-            cardview:layout_constraintEnd_toEndOf="@+id/cart_image_id"
-            cardview:layout_constraintStart_toStartOf="@+id/cart_image_id"
-            cardview:layout_constraintTop_toBottomOf="@+id/cart_image_id">
+            cardview:layout_constraintEnd_toEndOf="@+id/cartProductImage"
+            cardview:layout_constraintStart_toStartOf="@+id/cartProductImage"
+            cardview:layout_constraintTop_toBottomOf="@+id/cartProductImage">
 
             <Button
+                android:id="@+id/decreaseQty"
                 android:layout_width="32dp"
                 android:layout_height="32dp"
                 android:text="-" />
 
             <TextView
+                android:id="@+id/Qty"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Qty: 1"
+                android:text="1"
                 android:textColor="@color/black" />
 
             <Button
+                android:id="@+id/increaseQty"
                 android:layout_width="32dp"
                 android:layout_height="32dp"
                 android:text="+" />
@@ -99,36 +118,38 @@
         </LinearLayout>
 
 
+        <android.support.design.button.MaterialButton
+            android:id="@+id/saveChange"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:text="Save Change"
+            android:visibility="invisible"
+            cardview:layout_constraintBottom_toTopOf="@+id/ProductGridCart"
+            cardview:layout_constraintEnd_toEndOf="@+id/linearLayout2"
+            cardview:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
+
         <GridLayout
             android:id="@+id/ProductGridCart"
-            app:layout_constraintEnd_toEndOf="parent"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:columnCount="2"
+            android:columnCount="1"
+            app:layout_constraintEnd_toEndOf="parent"
             cardview:layout_constraintStart_toStartOf="@+id/price"
             cardview:layout_constraintTop_toBottomOf="@+id/price">
 
-
-            <TextView
-                android:id="@+id/sort"
+            <android.support.design.button.MaterialButton
+                android:id="@+id/remove"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_row="1"
+                android:layout_column="0"
                 android:layout_columnWeight="1"
-                android:text="Save for later"
-                android:textAlignment="center" />
-
-            <TextView
-                android:id="@+id/filter"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_row="0"
-                android:layout_column="1"
-                android:layout_columnWeight="1"
+                android:elevation="8dp"
                 android:text="Remove"
                 android:textAlignment="center" />
         </GridLayout>
-
-
     </android.support.constraint.ConstraintLayout>
 </android.support.v7.widget.CardView>

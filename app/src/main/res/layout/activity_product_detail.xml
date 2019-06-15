@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:theme="@style/MaterialTheme"
     tools:context=".ProductDetailActivity">
 
     <android.support.v7.widget.Toolbar
@@ -13,6 +14,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="8dp"
+        android:background="@drawable/side_nav_bar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -23,95 +25,162 @@
             android:layout_height="wrap_content" />
 
         <ImageView
+            android:onClick="goToCart"
+            android:id="@+id/cartIcon"
+            android:padding="8dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="end"
             android:layout_margin="8dp"
             android:src="@drawable/ic_baseline_shopping_cart_24px" />
 
-        <android.support.v7.widget.SearchView
+        <ImageView
+            android:onClick="goToSearch"
+            android:id="@+id/productDetailSearch_btn"
+            android:padding="8dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="end">
-        </android.support.v7.widget.SearchView>
+            android:layout_gravity="end"
+            android:layout_margin="8dp"
+            android:src="@drawable/ic_baseline_search_24px" />
+
     </android.support.v7.widget.Toolbar>
 
-    <LinearLayout
-        android:id="@+id/linearLayout"
+    <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:orientation="vertical"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/cartandorder"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar2"
-        tools:context=".ProductDetailActivity">
+        app:layout_constraintTop_toBottomOf="@+id/toolbar2">
 
-        <ImageView
-            android:id="@+id/itemImage"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:contentDescription="ITEM IMAGE"
-            android:src="@drawable/ic_man" />
+            android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/DetailProductName"
-            android:text="Product Name"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            <LinearLayout
+                android:background="@drawable/custom_border"
+                android:id="@+id/linearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/toolbar2"
+                tools:context=".ProductDetailActivity">
 
-        <TextView
-            android:id="@+id/merchantNameProductDetailPage"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Asian" />
+                <ImageView
+                    android:id="@+id/itemImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:contentDescription="ITEM IMAGE"
+                    android:src="@drawable/ic_man" />
 
-        <TextView
-            android:id="@+id/productDescription"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="This is a SHOE" />
+                <TextView
+                    android:id="@+id/DetailProductName"
+                    style="@style/TextAppearance.AppCompat.Widget.TextView.SpinnerItem"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Product Name"
+                    android:padding="4dp" />
 
-        <TextView
-            android:id="@+id/priceProductDetail"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="449" />
-    </LinearLayout>
+                <TextView
+                    android:id="@+id/merchantNameProductDetailPage"
+                    style="@style/TextAppearance.AppCompat.Widget.TextView.SpinnerItem"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Merchant Name"
+                    android:padding="4dp" />
 
-    <LinearLayout
-        android:id="@+id/ProductDetai"
+                <TextView
+                    android:id="@+id/productDescription"
+                    style="@style/TextAppearance.AppCompat.Small"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Description"
+                    android:padding="4dp" />
+
+                <TextView
+                    android:id="@+id/priceProductDetail"
+                    style="@style/TextAppearance.AppCompat.Large"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="price"
+                    android:padding="4dp" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_margin="8dp"
+                android:background="@drawable/custom_border"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="4dp"
+                    android:text="Product Detail"
+                    android:textSize="24sp" />
+
+                <LinearLayout
+                    android:id="@+id/ProductDetail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:padding="4dp"
+                    android:orientation="vertical"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_margin="8dp"
+                android:background="@drawable/custom_border"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="24sp"
+                    android:padding="4dp"
+                    android:text="All Merchants" />
+
+                <LinearLayout
+                    android:id="@+id/AllMerchantInformation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+
+    <GridLayout
+        android:id="@+id/cartandorder"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:orientation="vertical"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-        tools:layout_editor_absoluteX="60dp">
+        android:layout_height="40dp"
+        android:layout_marginBottom="8dp"
+        android:rowCount="1"
+        android:columnCount="1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
 
-        <TextView
+        <android.support.design.button.MaterialButton
+            android:id="@+id/AddToCart"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Product Detail" />
-
-        <!--TODO ADD DETAILS DYNAMICALLY-->
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:layout_marginTop="8dp"
-        android:orientation="vertical"
-        app:layout_constraintTop_toBottomOf="@+id/ProductDetai"
-        tools:layout_editor_absoluteX="0dp">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Seller Information" />
-
-        <!--TODO ADD A LINEAR LIST OF SELLERS-->
-
-    </LinearLayout>
-
+            android:layout_height="match_parent"
+            android:layout_row="0"
+            android:layout_column="0"
+            android:text="ADD TO CART"
+            android:textAlignment="center"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
+    </GridLayout>
 
 </android.support.constraint.ConstraintLayout>
