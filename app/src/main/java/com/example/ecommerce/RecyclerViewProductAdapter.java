@@ -54,16 +54,17 @@ public class RecyclerViewProductAdapter extends RecyclerView.Adapter<RecyclerVie
             productImage = itemView.findViewById(R.id.productImage);
             price = itemView.findViewById(R.id.price);
             productName = itemView.findViewById(R.id.productName);
-            merchantName = itemView.findViewById(R.id.merchantName);
         }
 
         public void bind(Product item){
             Log.d("recyclerView ", "binding data ");
-            price.setText(String.valueOf(item.getPrice()));
-            productName.setText(item.getProductName());
-            //merchantName.setText(item.);
-            Glide.with(itemView.getContext()).load(item.getProductIimages().get((0))).into(productImage);
-            itemView.setContentDescription(String.valueOf(item.getProductId()));
+            if(item != null){
+                price.setText(String.valueOf(item.getPrice()));
+                productName.setText(item.getProductName());
+                //merchantName.setText(item.);
+                Glide.with(itemView.getContext()).load(item.getProductIimages().get((0))).into(productImage);
+                itemView.setContentDescription(String.valueOf(item.getProductId()));
+            }
         }
     }
 

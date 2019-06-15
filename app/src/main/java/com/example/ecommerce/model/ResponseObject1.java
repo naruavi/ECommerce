@@ -1,15 +1,15 @@
 package com.example.ecommerce.model;
 
-public class ResponseObjectMerchant {
+public class ResponseObject1 {
 
-    private Merchant data;
+    private Object data;
     private boolean ok;
 
-    public Merchant getData() {
+    public Object getData() {
         return data;
     }
 
-    public void setData(Merchant data) {
+    public void setData(Object data) {
         this.data = data;
     }
 

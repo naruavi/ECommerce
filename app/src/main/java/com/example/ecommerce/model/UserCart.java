@@ -1,10 +1,14 @@
 package com.example.ecommerce.model;
 
+import com.google.gson.annotations.SerializedName;
+
 import java.util.List;
 
 public class UserCart {
 
     private int userId;
+
+    @SerializedName("cartItems")
     private List<CartItem> listOfCartItem;
 
     public int getUserId() {

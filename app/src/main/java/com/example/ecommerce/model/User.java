@@ -7,7 +7,7 @@ public class User {
     private int userId;
     private String userName;
     private String userDisplayName;
-    private List<String> userAddress;
+    private List<String> userAddressList;
     private String userEmail;
     private long userPhone;
     private String userPassword;
@@ -37,11 +37,11 @@ public class User {
     }
 
     public List<String> getUserAddress() {
-        return userAddress;
+        return userAddressList;
     }
 
     public void setUserAddress(List<String> userAddress) {
-        this.userAddress = userAddress;
+        this.userAddressList = userAddress;
     }
 
     public String getUserEmail() {

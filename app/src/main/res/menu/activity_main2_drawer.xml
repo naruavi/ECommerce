@@ -19,7 +19,7 @@
             android:icon="@drawable/ic_storage"
             android:title="@string/menu_luggage" />
         <item
-            android:id="@+id/nav_tools"
+            android:id="@+id/nav_beauty"
             android:icon="@drawable/ic_bathroom"
             android:title="@string/menu_beauty_and_care_products" />
         <item
@@ -37,9 +37,18 @@
         <item
             android:id="@+id/nav_my_cart"
             android:title="@string/menu_my_cart" />
+        <!--<item-->
+            <!--android:id="@+id/nav_my_account"-->
+            <!--android:title="@string/menu_my_account" />-->
         <item
-            android:id="@+id/nav_my_account"
-            android:title="@string/menu_my_account" />
+            android:id="@+id/nav_login"
+            android:title="Login" />
+        <item
+            android:id="@+id/nav_signup"
+            android:title="Signup" />
+        <item
+            android:id="@+id/nav_logout"
+            android:title="Logout"/>
     </group>
 
 </menu>

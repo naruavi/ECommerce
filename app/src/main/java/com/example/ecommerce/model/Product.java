@@ -2,6 +2,7 @@ package com.example.ecommerce.model;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.util.HashMap;
 import java.util.List;
 
 public class Product {
@@ -23,6 +24,17 @@ public class Product {
 
     @SerializedName("description")
     private String description;
+
+    @SerializedName("attributes")
+    private HashMap<String, String> attributes;
+
+    public HashMap<String, String> getAttribute() {
+        return attributes;
+    }
+
+    public void setAttribute(HashMap<String, String> attribute) {
+        this.attributes = attribute;
+    }
 
     public String getDescription() {
         return description;

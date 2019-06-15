@@ -4,7 +4,7 @@ public class CartItem {
 
     private int productId;
     private int merchantId;
-    private int qty;
+    private int quantity;
 
     public int getProductId() {
         return productId;
@@ -22,11 +22,20 @@ public class CartItem {
         this.merchantId = merchantId;
     }
 
-    public int getQty() {
-        return qty;
+    @Override
+    public String toString() {
+        return "CartItem{" +
+                "productId=" + productId +
+                ", merchantId=" + merchantId +
+                ", qty=" + quantity +
+                '}';
     }
 
-    public void setQty(int qty) {
-        this.qty = qty;
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
     }
 }

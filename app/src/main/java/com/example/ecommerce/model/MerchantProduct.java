@@ -2,26 +2,27 @@ package com.example.ecommerce.model;
 
 public class MerchantProduct {
 
-    private int merchant_id;
-    private int product_id;
+    private int merchantId;
+    private int productId;
     private String merchantName;
-    private double merchantRating;
-    private double price;
+    private int stock;
+    private double averageRating;
+    private double productPrice;
 
-    public int getMerchant_id() {
-        return merchant_id;
+    public int getMerchantId() {
+        return merchantId;
     }
 
-    public void setMerchant_id(int merchant_id) {
-        this.merchant_id = merchant_id;
+    public void setMerchantId(int merchantId) {
+        this.merchantId = merchantId;
     }
 
-    public int getProduct_id() {
-        return product_id;
+    public int getProductId() {
+        return productId;
     }
 
-    public void setProduct_id(int product_id) {
-        this.product_id = product_id;
+    public void setProductId(int productId) {
+        this.productId = productId;
     }
 
     public String getMerchantName() {
@@ -32,19 +33,27 @@ public class MerchantProduct {
         this.merchantName = merchantName;
     }
 
-    public double getMerchantRating() {
-        return merchantRating;
+    public int getStock() {
+        return stock;
     }
 
-    public void setMerchantRating(double merchantRating) {
-        this.merchantRating = merchantRating;
+    public void setStock(int stock) {
+        this.stock = stock;
     }
 
-    public double getPrice() {
-        return price;
+    public double getAverageRating() {
+        return averageRating;
     }
 
-    public void setPrice(double price) {
-        this.price = price;
+    public void setAverageRating(double averageRating) {
+        this.averageRating = averageRating;
+    }
+
+    public double getProductPrice() {
+        return productPrice;
+    }
+
+    public void setProductPrice(double productPrice) {
+        this.productPrice = productPrice;
     }
 }
